@@ -25,8 +25,10 @@
 <body>
 
 <div class="container">
-  <div id="chart"></div>
-  <div class="percentage-text" id="percentageText">15%</div>
+  <div id="chart-wrapper">
+    <div id="chart"></div>
+    <div class="percentage-text" id="percentageText">15%</div>
+  </div>
   <h1 id="chart-label">Views from desktop</h1>
 </div>
 
@@ -42,16 +44,13 @@
       <input type="text" id="label" name="label" required>
     </div>
     <br><br>
-    <input type="submit" value="Update Chart" class="material-button" id="submit">
+    <input type="submit" value="Update Chart" class="material-button">
     <button id="saveBtn" class="material-button">Save as PNG</button>
   </form>
 </div>
-
-
 
 <script src="js/app.js"></script>
 <script src="node_modules/html2canvas/dist/html2canvas.min.js"></script>
 
 </body>
-
 </html>

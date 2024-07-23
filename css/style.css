@@ -20,30 +20,36 @@ body {
   margin: 0 auto; /* Center the container horizontally */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center the chart horizontally */
+  align-items: center;
+}
+
+#chart-wrapper {
+  width: 100%;
+  height: 90%; /* Adjust height to leave space for the label */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Ensure positioning context for the percentage-text */
 }
 
 #chart {
   width: 100%;
-  height: 90%; /* Adjust height to leave space for the label */
-  position: relative; /* Ensure positioning context for the percentage-text */
+  height: 100%;
 }
 
 .percentage-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -70%);
   font-size: 4rem;
   font-family: "Cera Pro Bold", sans-serif;
   color: #003643;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
 }
 
 #chart-label {
-  position: absolute;
-  bottom: 10px; /* Adjust this value to position the label correctly */
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: auto;
+  transform: translateY(20px);
   text-align: center;
   width: 100%;
   font-size: 2em;
