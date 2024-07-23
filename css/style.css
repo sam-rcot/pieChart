@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Cera Pro Bold";
+  src: url("TypeMates - Cera Pro Bold.otf") format("opentype");
+}
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+body {
+  font-family: "Cera Pro Bold", sans-serif;
+  color: #003643;
+}
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 550px; /* Increase height to make space for the label */
+  margin: 0 auto; /* Center the container horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the chart horizontally */
+}
+
+#chart {
+  width: 100%;
+  height: 90%; /* Adjust height to leave space for the label */
+  position: relative; /* Ensure positioning context for the percentage-text */
+}
+
+.percentage-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  font-size: 4rem;
+  font-family: "Cera Pro Bold", sans-serif;
+  color: #003643;
+}
+
+#chart-label {
+  position: absolute;
+  bottom: 10px; /* Adjust this value to position the label correctly */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+}
+
+.form {
+  margin-top: 3rem;
+}
+
+form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Add space between input containers */
+  margin: 20px auto;
+  padding: 20px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center the elements */
+}
+
+label {
+  flex-basis: 30%; /* Adjust this value to fit the width of the labels */
+  text-align: start; /* Align labels to the start */
+  font-size: 16px;
+  color: #616161;
+}
+
+input {
+  width: 65%; /* Adjust this value to fit the width of the inputs */
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #616161;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+input:focus {
+  border-color: #6f35a3;
+  outline: none;
+}
+
+#submit {
+  display: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add space between buttons */
+}
+
+.material-button {
+  background-color: #6f35a3;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-top: 10px;
+  align-self: center;
+  height: 3em;
+}
+.material-button:hover {
+  background-color: #55287d;
+}
+.material-button:active {
+  background-color: #6f35a3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.material-button:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=style.css.map */
