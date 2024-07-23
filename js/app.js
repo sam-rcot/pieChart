@@ -8,8 +8,8 @@ const margin = 50;
 const radius = Math.min(width, height) / 2 - margin;
 const innerRadius = radius * 0.9;
 
-// chart.style.width = `${width}px`;
-// chart.style.height = `${height}px`;
+// Clear any previous content
+d3.select("#chart").html("");
 
 const svg = d3.select("#chart")
   .append("svg")
@@ -43,6 +43,7 @@ const overlayPaths = svg.selectAll('path.overlay')
   .data(dataReady)
   .enter()
   .append('path')
+  .attr('class', 'overlay')
   .attr('d', overlayArc)
   .attr('fill', (d, i) => overlayColors[i])
   .attr("stroke", "white")
@@ -60,22 +61,37 @@ document.getElementById('label').addEventListener('input', function () {
   updateLabel(label);
 });
 
-document.getElementById('saveBtn').addEventListener('click', function (event) {
-  event.preventDefault(); // Prevent the page from refreshing
-
+// Generic function to save the chart in different formats
+function saveChart(format) {
   const label = document.getElementById('chart-label').innerText;
   const formattedLabel = label.toLowerCase().replace(/\s+/g, '_');
 
   html2canvas(document.querySelector('.container'), {
     useCORS: true,
     allowTaint: true,
-    scale: 2 // Scale to get 150 DPI (2x scale for 300x300px output from 150x150px canvas)
+    scale: 4 // Scale to get 150 DPI (2x scale for 300x300px output from 150x150px canvas)
   }).then(canvas => {
     const link = document.createElement('a');
-    link.download = `${formattedLabel}.png`;
-    link.href = canvas.toDataURL("image/png", 1.0);
+    link.download = `${formattedLabel}.${format}`;
+    link.href = canvas.toDataURL(`image/${format}`, format === 'jpeg' || format === 'webp' ? 0.9 : 1.0);
     link.click();
   });
+}
+
+// Event listeners for save buttons
+document.getElementById('savePNG').addEventListener('click', function (event) {
+  event.preventDefault();
+  saveChart('png');
+});
+
+document.getElementById('saveWebP').addEventListener('click', function (event) {
+  event.preventDefault();
+  saveChart('webp');
+});
+
+document.getElementById('saveJPEG').addEventListener('click', function (event) {
+  event.preventDefault();
+  saveChart('jpeg');
 });
 
 function updateLabel(label) {

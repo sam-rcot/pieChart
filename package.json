@@ -11,10 +11,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.prod.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.6.0",
     "sass": "^1.77.8",
     "webpack": "^5.91.0",
@@ -24,7 +27,9 @@
   },
   "dependencies": {
     "@types/d3": "^7.4.3",
+    "canvg": "^4.0.2",
     "d3": "^7.9.0",
-    "html2canvas": "^1.4.1"
+    "html2canvas": "^1.4.1",
+    "save-svg-as-png": "^1.4.17"
   }
 }
