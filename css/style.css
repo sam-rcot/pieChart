@@ -56,19 +56,24 @@ body {
 }
 
 .form {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 form {
-  width: 400px;
+  width: 800px;
   display: flex;
   flex-direction: column;
   gap: 0; /* Add space between input containers */
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 20px;
   background: #f0f0f0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inputs {
+  width: 400px;
+  align-self: center;
 }
 
 .input-container {
@@ -85,7 +90,7 @@ label {
 }
 
 input {
-  width: 65%; /* Adjust this value to fit the width of the inputs */
+  width: 70%; /* Adjust this value to fit the width of the inputs */
   height: 30px;
   padding: 5px;
   font-size: 16px;
@@ -109,6 +114,12 @@ input:focus {
   gap: 10px; /* Add space between buttons */
 }
 
+.save-button-container {
+  display: flex;
+  align-self: center;
+  gap: 1rem;
+}
+
 .material-button {
   background-color: #6f35a3;
   color: #ffffff;
@@ -121,6 +132,7 @@ input:focus {
   margin-top: 10px;
   align-self: center;
   height: 3em;
+  width: 10em;
 }
 .material-button:hover {
   background-color: #55287d;
