@@ -13,7 +13,8 @@
     "start": "webpack serve --open --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "pages": "npm run predeploy && npm run deploy"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
